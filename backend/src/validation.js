@@ -41,7 +41,7 @@ const MOVIE_FIELDS = new Set([
   "duration", "description", "poster", "posterUrl", "backdropUrl",
   "videoSources", "status", "featured",
   "trending", "trendingOrder", "trendingBannerUrl",
-  "isPremium",
+  "isPremium", "planIds",
 ]);
 
 function unknownFields(body, allowed) {
@@ -158,6 +158,12 @@ function validateMovieInput(body, partial = false) {
 
   if (body.isPremium !== undefined && typeof body.isPremium !== "boolean") {
     errors.push({ field: "isPremium", message: "isPremium boolean bo'lishi kerak" });
+  }
+
+  if (body.planIds !== undefined && body.planIds !== null) {
+    if (!Array.isArray(body.planIds) || body.planIds.some((p) => !isNonEmptyString(p))) {
+      errors.push({ field: "planIds", message: "planIds stringlar massivi bo'lishi kerak" });
+    }
   }
 
   if (body.id !== undefined && body.id !== null && !isNonEmptyString(body.id)) {
