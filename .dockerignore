@@ -1,0 +1,19 @@
+# MUHIM: shu fayl bo'lmasa, `docker build` backend/.env (BOT_TOKEN, ADMIN_KEY)
+# ni image ICHIGA nusxalab qo'yishi mumkin edi (Dockerfile "COPY backend/ ..."
+# butun papkani oladi). Bu image keyin biror registry'ga push qilinsa,
+# maxfiy qiymatlar oshkora bo'lib qoladi.
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+node_modules
+backend/node_modules
+backend/data
+backend/logs
+videos
+.git
+.gitignore
+*.md

@@ -1,0 +1,26 @@
+# Maxfiy qiymatlar — HECH QACHON commit qilinmasin (BOT_TOKEN, ADMIN_KEY va h.k.)
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Lokal ma'lumotlar / generatsiya qilingan fayllar (Render'da bular
+# doimiy disk yoki R2'da saqlanadi — repoga kerak emas)
+backend/data/
+backend/logs/
+videos/
+
+# Cloudflared va boshqa lokal binariylar
+cloudflared.deb
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
